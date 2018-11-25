@@ -1,28 +1,24 @@
-<div *ngIf="bikes?.length > 0;else noBikes">
-  <ul>
-    <div class="row" *ngFor="let bike of bikes" class="collection">
-      <div class="card col l5 s12 m6">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="{{ bike.image }}">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">{{ bike.marca }}<i class="material-icons right">more_vert</i></span>
-          <p>{{ bike.description }}</p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">{{ bike.marca }}<i class="material-icons right">close</i></span>
-          <p>Marca: {{ bike.marca }}</p>
-          <p>Modelo: {{ bike.modelo }}</p>
-          <p>Serial: {{ bike.serial }}</p>
-          <p>Color: {{ bike.color }}</p>
-          <p>Tamaño de Rin: {{ bike.rin }}</p>
-          <p>tipo: {{ bike.tipo }}</p>
-          <p>Fecha de Compra: {{ bike.registerDate | date:'shortTime' }}</p>
-          <p> {{ bike.description }}</p>
-        </div>
-      </div>
+<div class="row" *ngIf="bikes?.length > 0;else noBikes">
+  <div *ngFor="let bike of bikes" class="collection card col l6 s12 m6">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="{{bike.image}}">
     </div>
-  </ul>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">{{ bike.marca }}<i class="material-icons right">more_vert</i></span>
+      <p>{{ bike.description }}</p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">{{ bike.marca }}<i class="material-icons right">close</i></span>
+      <p>Marca: {{ bike.marca }}</p>
+      <p>Modelo: {{ bike.modelo }}</p>
+      <p>Serial: {{ bike.serial }}</p>
+      <p>Color: {{ bike.color }}</p>
+      <p>Tamaño de Rin: {{ bike.rin }}</p>
+      <p>tipo: {{ bike.tipo }}</p>
+      <p>Fecha de Compra: {{ bike.registerDate }}</p>
+      <p> {{ bike.description }}</p>
+    </div>
+  </div>
 </div>
 
 <ng-template #noBikes>

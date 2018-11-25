@@ -1,39 +1,44 @@
 <div class="row container bike">
   <h4>Ingrese los datos de la bicicleta</h4>
-  <form (ngSubmit)="updateTask(task)">
+  <form (ngSubmit)="addBike()">
     <div class="row">
       <div class="input-field col s12 m12">
-        <input type="text" name="marca" placeholder="ingrese marca" [(ngModel)]="bike.marca" />
+        <input type="text" name="marca" placeholder="Ingrese marca" [(ngModel)]="bike.marca" />
       </div>
       <div class="input-field col s12 m12">
-        <input type="text" name="modelo" placeholder="ingrese modelo" [(ngModel)]="bike.modelo"/>
+        <input type="text" name="modelo" placeholder="Ingrese modelo" [(ngModel)]="bike.modelo" />
       </div>
       <div class="input-field col s12 m12">
-        <input type="text" name="Serial" placeholder="ingrese serial del marco" [(ngModel)]="bike.serial"/>
+        <input type="text" name="Serial" placeholder="Ingrese serial del marco" [(ngModel)]="bike.serial" />
       </div>
       <div class="input-field col s12 m12">
-        <input type="text" name="color" placeholder="ingrese color" [(ngModel)]="bike.color"/>
+        <input type="text" name="color" placeholder="Ingrese color" [(ngModel)]="bike.color" />
       </div>
       <div class="input-field col s12 m12">
-        <input type="number" name="rin" placeholder="Tamaño del rin" [(ngModel)]="bike.rin"/>
+        <input type="number" name="rin" placeholder="Tamaño del rin" [(ngModel)]="bike.rin" />
       </div>
-      <div class="input-field col s12">
-        <select name="tipo" [(ngModel)]="bike.tipo">
-          <option value="mtb">Mtb</option>
-          <option value="route">Ruta</option>
-          <option value="folding">Plegable</option>
-          <option value="urban">Urbana</option>
+      <div class="input-field col s12 m12">
+        <select class="icons" [(ngModel)]="bike.tipo" name="tipo">
+          <option value="none" disabled="disabled" selected>Seleccione Tipo de bicicleta</option>
+          <option value="Mtb" data-icon="data:image/svg;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNDc2Ljg2NywzMTQuMTA2Yy0xOC40NDgtMTguNTEyLTQ0LjAyMy0yOS45MDQtNzIuMTktMjkuOTA0DQoJYy04Ljg1LDAtMTcuMzk2LDEuMTE1LTI1LjU2NywzLjIybC01LjUwOS0xNS4xNzFjMzEuMjYxLTguOTc2LDY2LjczNy00LjMyOSw5NC44NDcsMTIuMDE0bDAuOTg5LTEuOA0KCWMtMjMuODM3LTE5LjAwNy02My42NDQtMjYuNDMtOTguODczLTE4LjgxNmwtMTIuMTk4LTMzLjk5M2M0LjcxLTMuNTI1LDguMDUxLTguOTEzLDguOTItMTUuMjI4DQoJYzAuMTIxLTEuMTczLDAuMTg0LTIuMzUyLDAuMTIxLTMuNTMxYzEuMjM2LDAuNTU3LDIuNiwwLjc0NywzLjg5OCwwLjMxbDM0LjI0MS0xMC4wOTJjMi44NDYtMC44MDUsNC40NTctMy44MzYsMy42NTEtNi42MTkNCglsLTIuNTM2LTguNzNjLTAuODY5LTIuODUzLTMuODQyLTQuNDYzLTYuNjg5LTMuNjU4bC0zNC4yOTcsMTAuMTU2Yy0xLjk4NCwwLjU1OC0zLjQ2NywyLjI4OC0zLjcxNSw0LjI3Mw0KCWMtMy41OTUtNC4wODktOC41NDYtNi45MzUtMTQuMjM5LTcuNjc3bC03NC4yMzEtMTAuMTU2bC0zNC44NTUtNDguNDA5bDcuOTgyLTE2LjE1OWMwLjEyNi0wLjI0OCwwLjI0Ny0wLjU1OCwwLjM3NC0wLjgwNQ0KCWMyMy4wOTUtMS44NTgsNDEuMjk3LTIxLjIzOCw0MS4yOTctNDQuNzY0YzAtMjQuODI2LTIwLjEyMi00NC45NDgtNDQuOTQ4LTQ0Ljk0OGMtMjQuNzY0LDAtNDQuODg1LDIwLjEyMi00NC44ODUsNDQuOTQ4DQoJYzAsOS4yMjQsMi43ODMsMTcuODMzLDcuNjE0LDI0Ljk1M2wtMC4zNzQsMC42MTVsLTU2LjA4NywxMTQuMTY1Yy0wLjQ5NCwxLjE3OS0wLjk5NSwyLjM1Mi0xLjM2MiwzLjUzMWgtMTIuNjkzDQoJYy03Ljk4OCwwLTE0LjQ4Niw2LjQ5OC0xNC40ODYsMTQuNDg2czYuNDk4LDE0LjQ4NiwxNC40ODYsMTQuNDg2bDE3Ljc3LDAuMzExbDE4LjgxNiwzMi44MTQNCgljLTM5Ljk5MS0yMi4yOS05OC4zMDktMTcuMzM5LTEyOS40NTUsNy41NWwxLjA1MiwxLjczN2M0Ni4xOS0yNi44NzUsMTEyLjM3MS0yMi4wNDMsMTQ2LjczMSwyMi42NThsNy4zMDMsMTIuODc2bC05LjE2MSw1LjcNCgljLTIuNzgzLTMuNjU4LTUuODItNy4xMjEtOS4wNDEtMTAuMzRjLTE4LjUxMi0xOC41MTItNDQuMDE2LTI5LjkwNC03Mi4xODMtMjkuOTA0Yy0yOC4yMzYsMC01My43NDEsMTEuMzkyLTcyLjE4OSwyOS45MDQNCgljLTE4LjUxMiwxOC40NDktMjkuOTY3LDQ0LjAxNi0yOS45NjcsNzIuMTgzYzAsMjguMTc0LDExLjQ1Niw1My43NDIsMjkuOTY3LDcyLjE5YzE4LjQ0OSwxOC40NDksNDMuOTUzLDI5LjkwNCw3Mi4xODksMjkuOTA0DQoJYzI4LjE2NywwLDUzLjY3Mi0xMS40NTUsNzIuMTgzLTI5LjkwNGMxNi4yMjQtMTYuMjE3LDI2Ljk5NC0zNy44ODYsMjkuMzQ3LTYxLjk3MWgzLjA5M2MtMi4xMDUsMTEuMzkzLDQuNzY4LDIyLjcyMiwxNi4xMDMsMjYNCglsLTAuNzQ4LDEuMjQybC0xMi45NC01LjUxNWwtNC44ODgsMTEuNTgybDMzLjg2NywxNC40MjNsNC44ODctMTEuNTc2bC0xMS41MTMtNC44OTRsMy4yMjEtNS4wMTYNCgljNy42Ny0xLjk3NywxNC4xMTItNy44NjEsMTYuNDAxLTE1Ljk2OWw1LjAxNC0xNy43MDZsOC4wNTEtMTIuNTA4bDc0Ljc4OC05MC44MjJjMy4zNDEtMi4yMzEsNi43NDYtNC4yMDksMTAuMjc3LTYuMDAzDQoJbDUuNDQ1LDE0LjczM2MtMTAuMjc2LDUuMDE1LTE5LjU2NCwxMS42NC0yNy40ODgsMTkuNjI3Yy0xOC40NDksMTguNDQ5LTI5Ljk2Miw0NC4wMTYtMjkuOTYyLDcyLjE4Mw0KCWMwLDI4LjE3NCwxMS41MTMsNTMuNzQyLDI5Ljk2Miw3Mi4xOWMxOC40NTUsMTguNDQ5LDQzLjk1OSwyOS45MDQsNzIuMTg5LDI5LjkwNGMyOC4xNjcsMCw1My43NDItMTEuNDU1LDcyLjE5LTI5LjkwNA0KCWMxOC40NDktMTguNDQ4LDI5LjkwNC00NC4wMTYsMjkuOTA0LTcyLjE5QzUwNi43NzEsMzU4LjEyMiw0OTUuMzE1LDMzMi41NTUsNDc2Ljg2NywzMTQuMTA2eiBNNDYuMzM4LDMzMi4wODNsMzUuNzU5LDM1Ljc1OQ0KCWMtMi43ODksMy44NDQtNC42MzUsOC4zNjEtNS4zNTQsMTMuMjc2aC01MC44MkMyNy4xMDYsMzYyLjM1LDM0LjYxMywzNDUuMzE0LDQ2LjMzOCwzMzIuMDgzeiBNMjUuODgzLDM5MC42NTloNTAuOTQyDQoJYzAuODM2LDQuODA4LDIuODIyLDkuMTcxLDUuNjQ2LDEyLjkwMmwtMzYuNTE2LDM2LjUxNkMzNC4yODEsNDI2LjcyLDI2Ljg4OCw0MDkuNTQ1LDI1Ljg4MywzOTAuNjU5eiBNMTAyLjEyLDQ2Ny42ODUNCgljLTE4Ljk1Ni0xLjIwOC0zNi4xNC04LjgzNy00OS40Ni0yMC44MmwzNi42NDUtMzYuNjQ0YzMuNzQxLDIuNTg5LDguMTEzLDQuMjUzLDEyLjgxNSw0LjkyN1Y0NjcuNjg1eiBNMTAyLjEyLDM1NS43NzENCgljLTQuOTA5LDAuNzA3LTkuNDI4LDIuNTM5LTEzLjI3Niw1LjMyNWwtMzUuNzYyLTM1Ljc2MWMxMy4yNjEtMTEuNzcyLDMwLjI4Mi0xOS4yOTMsNDkuMDM4LTIwLjQ5N1YzNTUuNzcxeiBNMTExLjY2LDMwNC43ODgNCgljMjAuODIzLDEuMDg1LDM5LjYzMyw5Ljg5Miw1My40MjMsMjMuNzQxYzIuMTA1LDIuMTA1LDQuMTQ2LDQuMzM2LDYuMDA0LDYuNjI1bC00NC44ODQsMjcuNjA5DQoJYy00LjA2NC0zLjQ5Mi05LjAzNi01Ljk1My0xNC41NDItNi45MzVWMzA0Ljc4OHogTTExMS42Niw0NjcuNzM1VjQxNS4wOGM0LjU3OC0wLjgwOSw4Ljc4OC0yLjY0NSwxMi40MDctNS4yNjdsMzcuNDczLDM3LjQ3Mw0KCUMxNDguMTQ3LDQ1OS4yMzUsMTMwLjc4LDQ2Ni43NDUsMTExLjY2LDQ2Ny43MzV6IE0xNjguMzE1LDQ0MC41NjdsLTM3LjUxMi0zNy41MTNjMS40NzMtMi4wMjMsMi43NTgtNC4xOTIsMy42OTktNi41NDZoNTMuOTI1DQoJQzE4Ni4zMzYsNDEzLjMwNywxNzkuMDgxLDQyOC41MjksMTY4LjMxNSw0NDAuNTY3eiBNMTQzLjQxNCwzNzYuMDc2bDM4LjM4Ni0yMy41MjZjMy4yNzgsNy4zMSw1LjU3MiwxNS4yMzUsNi42MjUsMjMuNTI2SDE0My40MTR6DQoJIE0yMTcuNzA5LDM3Ni4wNzZoLTguNzkyYy0xLjE3My0xMi4xOTgtNC41MjEtMjMuNzc0LTkuNjU2LTM0LjI5OGw4LjY2Ny01LjMyNWwxMy45OTEsMjQuNDU4TDIxNy43MDksMzc2LjA3NnogTTIyOS43MTYsMzMzLjQyMw0KCWwtNC4zOTMtNy42NzdsNy45ODgtNC44MzFMMjI5LjcxNiwzMzMuNDIzeiBNMjQxLjQ4MiwyOTJsLTI2LjI1MywxNi4wOTZsLTMzLjU1Ni01OC41NjVsNjIuOTAyLDMxLjI2N0wyNDEuNDgyLDI5MnoNCgkgTTIwMC40OTcsMjA3Ljk4N2wxNS40MTgtMzEuMzI1bDI2LjM3MywzNi41OTNjMy43NzksNS4zMTksOS40NzEsOC40NzUsMTUuNDEyLDkuMjgxbDc5LjEyNSwxMC44MzRsLTQzLjk2LDI2Ljk5NA0KCWMtMS45NzctNS4wNzgtNS44Mi05LjQwOC0xMS4wODItMTIuMDA3TDIwMC40OTcsMjA3Ljk4N3ogTTI4NC4wNzksMzI2Ljg1NWwtNC41ODQtMS45MTRsMTEuMTQ1LTM5LjI1NWw1My44NjItMzMuMTE4bDAuMjQ3LDAuNjE1DQoJTDI4NC4wNzksMzI2Ljg1NXogTTM0Ni45MTcsMzI4LjUyOWM1Ljg3Ny01Ljg4MywxMi42OTMtMTAuODk3LDIwLjEyMi0xNC43OTZsMjAuOTIxLDU2LjY1MWMtMi41MiwzLjEyNy00LjMzLDYuODU0LTUuMDcxLDEwLjk2Ng0KCWgtNTkuNjg1QzMyNC40NDIsMzYwLjc5MSwzMzMuMjE1LDM0Mi4yMzEsMzQ2LjkxNywzMjguNTI5eiBNMzIzLjE4NiwzOTAuODloNjAuMDA5YzAuNjYsMi44LDEuNzc0LDUuNDI4LDMuMzMzLDcuNzUxDQoJbC00Mi4zNzQsNDIuMzc0QzMzMS45OTYsNDI3LjU4MiwzMjQuMjY1LDQxMC4xMzQsMzIzLjE4NiwzOTAuODl6IE00MDEuMDI2LDQ2Ny43NjZjLTE5LjE0Mi0wLjg0Ni0zNi41Ni04LjIxNy01MC4wOC0yMC4wNTENCglsNDIuMzkxLTQyLjM5MWMyLjMxNiwxLjUwOSw0LjkwOSwyLjYxNSw3LjY4OSwzLjI0NlY0NjcuNzY2eiBNNDAxLjAyNiwzNDYuODI1bC0xNC43OTYtNDAuMTVjNC43ODUtMS4wOTgsOS43MzUtMS42NjUsMTQuNzk2LTEuODkzDQoJVjM0Ni44MjV6IE00ODYuMDksMzgxLjM0OWgtNTYuNTY5Yy0wLjU2My0zLjE4OC0xLjczNC02LjE2MS0zLjQzMy04Ljc3Nmw0MC4wMTMtNDAuMDEzDQoJQzQ3Ny42NjcsMzQ1Ljc3Niw0ODQuOTc1LDM2Mi43MTgsNDg2LjA5LDM4MS4zNDl6IE00MTAuNTY2LDMwNC44N2MxOC43MzcsMS4zNDUsMzUuNyw5LjAxLDQ4LjgzNSwyMC44OThsLTQwLjAwOSw0MC4wMDkNCgljLTIuNjE5LTEuNzU2LTUuNjExLTIuOTY0LTguODI2LTMuNTU2VjMwNC44N3ogTTQxMC41NjYsNDY3LjY1NHYtNTguODg5YzIuODkzLTAuNTM2LDUuNTc3LTEuNjMsOC4wMDUtMy4xMjZsNDEuMDExLDQxLjAxMQ0KCUM0NDYuNDIzLDQ1OC42MjYsNDI5LjM5LDQ2Ni4zMTIsNDEwLjU2Niw0NjcuNjU0eiBNNDY2LjI2Niw0MzkuODQzbC00MC43MTMtNDAuNzEzYzEuNzMyLTIuNDQ4LDIuOTk1LTUuMjMzLDMuNzAyLTguMjRoNTYuODUzDQoJQzQ4NS4wNjYsNDA5LjU3Miw0NzcuODA5LDQyNi41NzQsNDY2LjI2Niw0MzkuODQzeiIvPg0KPC9zdmc+DQo=" class="left">MTB</option>
+          <option value="Route" data-icon="images/sample-1.jpg" class="left">Ruta</option>
+          <option value="folding" data-icon="images/office.jpg" class="left">Plegable</option>
+          <option value="urban" data-icon="images/yuna.jpg" class="left">Urbana - Turismo</option>
         </select>
         <label>Seleccione tipo de bicicleta:</label>
       </div>
+
       <div class="input-field col s12 m12">
-        <input type="number" name="talla" placeholder="ingrese talla de la bicicleta" [(ngModel)]="bike.marca" />
+        <input type="number" name="talla" placeholder="ingrese talla de la bicicleta" [(ngModel)]="bike.talla" />
       </div>
       <div class="input-field col s12 m12">
         <textarea rows="5" name="Description" placeholder="ingrese description de su bicicleta" [(ngModel)]="bike.description"></textarea>
       </div>
       <div class="input-field col s12 m12">
-          <input type="text" class="datepicker" name="fechaCompra" placeholder="Seleccione fecha de compra" [(ngModel)]="bike.registerDate">
+          <input type="text" name="urlImage" placeholder="ingrese url de imagen" [(ngModel)]="bike.image" />
+        </div>
+      <div class="input-field col s12 m12">
+        <input type="text" class="datepicker" name="fechaCompra" placeholder="Seleccione fecha de compra" [(ngModel)]="bike.registerDate">
       </div>
       <input type="submit" class="btn" value="Guardar" />
     </div>

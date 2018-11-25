@@ -1,13 +1,13 @@
 <li *ngIf="afAuth.user | async as user; else showLogin">
   <ul>
-    <li><a routerLink="/bike-register">Registrar Bicicleta</a></li>
-    <li><a href="#" (click)="loginWithFacebook()">Facebook</a></li>
-    <li><a href="#" (click)="loginWithFacebook()">Facebook</a></li>
+    <li><a routerLink="/bike-register">Registrar</a></li>
+    <li><a href="#" (click)="loginWithFacebook()">Consultar</a></li>
+    
     <li>
       <div class="user-view">
         <div class="contact">
           <h3><img width="30px" class="circle col s1" src="{{user.photoURL}}">
-            <span class="white-text name">{{ user.displayName }}</span></h3>
+            <span class="white-text name">{{ user.displayName  }}</span></h3>
         </div>
       </div>
     </li>
