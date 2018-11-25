@@ -1,0 +1,39 @@
+<li *ngIf="afAuth.user | async as user; else showLogin">
+  <ul>
+    <li><a routerLink="/bike-register">Registrar Bicicleta</a></li>
+    <li><a href="#" (click)="loginWithFacebook()">Facebook</a></li>
+    <li><a href="#" (click)="loginWithFacebook()">Facebook</a></li>
+    <li>
+      <div class="user-view">
+        <div class="contact">
+          <h3><img width="30px" class="circle col s1" src="{{user.photoURL}}">
+            <span class="white-text name">{{ user.displayName }}</span></h3>
+        </div>
+      </div>
+    </li>
+    <li>
+      <a (click)="logout()" class="waves-effect waves-light btn"><i class="material-icons">close</i></a>
+    </li>
+  </ul>
+</li>
+
+<ng-template #showLogin>
+  <li>
+    <div class="title" style="display:none">
+      <ul id="dropdown1" class="">
+        <li><a href="#" (click)="loginWithFacebook()">Facebook</a></li>
+        <li><a href="#" (click)="loginWithGoogle()">Google</a></li>
+        <li class="divider"></li>
+        <li><a href="#!" (click)="loginWithEmail()">E-Mail and Password</a></li>
+      </ul>
+    </div>
+  </li>
+  <li><a id="loginOptions" href="#" (click)="showLoginOptions()"> <i class="material-icons left">account_box</i> Login</a></li>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="#!">Facebook</a></li>
+    <li><a href="#" (click)="login()">Google</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">E-Mail and Password</a></li>
+  </ul>
+</ng-template>

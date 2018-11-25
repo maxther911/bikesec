@@ -1,0 +1,41 @@
+<div class="row container bike">
+  <h4>Ingrese los datos de la bicicleta</h4>
+  <form (ngSubmit)="updateTask(task)">
+    <div class="row">
+      <div class="input-field col s12 m12">
+        <input type="text" name="marca" placeholder="ingrese marca" [(ngModel)]="bike.marca" />
+      </div>
+      <div class="input-field col s12 m12">
+        <input type="text" name="modelo" placeholder="ingrese modelo" [(ngModel)]="bike.modelo"/>
+      </div>
+      <div class="input-field col s12 m12">
+        <input type="text" name="Serial" placeholder="ingrese serial del marco" [(ngModel)]="bike.serial"/>
+      </div>
+      <div class="input-field col s12 m12">
+        <input type="text" name="color" placeholder="ingrese color" [(ngModel)]="bike.color"/>
+      </div>
+      <div class="input-field col s12 m12">
+        <input type="number" name="rin" placeholder="Tamaño del rin" [(ngModel)]="bike.rin"/>
+      </div>
+      <div class="input-field col s12">
+        <select name="tipo" [(ngModel)]="bike.tipo">
+          <option value="mtb">Mtb</option>
+          <option value="route">Ruta</option>
+          <option value="folding">Plegable</option>
+          <option value="urban">Urbana</option>
+        </select>
+        <label>Seleccione tipo de bicicleta:</label>
+      </div>
+      <div class="input-field col s12 m12">
+        <input type="number" name="talla" placeholder="ingrese talla de la bicicleta" [(ngModel)]="bike.marca" />
+      </div>
+      <div class="input-field col s12 m12">
+        <textarea rows="5" name="Description" placeholder="ingrese description de su bicicleta" [(ngModel)]="bike.description"></textarea>
+      </div>
+      <div class="input-field col s12 m12">
+          <input type="text" class="datepicker" name="fechaCompra" placeholder="Seleccione fecha de compra" [(ngModel)]="bike.registerDate">
+      </div>
+      <input type="submit" class="btn" value="Guardar" />
+    </div>
+  </form>
+</div>
