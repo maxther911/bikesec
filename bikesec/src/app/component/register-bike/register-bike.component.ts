@@ -11,11 +11,6 @@ declare var $: any;
   styleUrls: ['./register-bike.component.css']
 })
 export class RegisterBikeComponent implements OnInit {
-  task: Task = {
-    title: '',
-    description: '' 
-   };
-
    bike: Bike = {
     id : '',
     marca : '',

@@ -1,8 +1,5 @@
 export interface Bike {
     id?: string;
-    title?: string;
-    description?: string;
-    
     marca?: string;
     modelo?: string;
     serial?: string;
@@ -10,14 +7,9 @@ export interface Bike {
     rin?: string;
     tipo?: string;
     talla?: string;
+    description?: string;
+    image?: string;
     registerDate?: Date;
     incidentDate?: Date;
-  }
-  
-
-  export interface Task {
-    id?: string;
-    title?: string;
-    description?: string;
   }
   

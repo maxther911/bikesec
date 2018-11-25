@@ -12,12 +12,15 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { TaskService } from './service/task.service'
 import { LoginService } from './service/login.service'
+import { BikesService } from './service/bikes.service'
+
 
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterBikeComponent } from './component/register-bike/register-bike.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BannerComponent } from './component/banner/banner.component';
+import { ListBikesComponent } from './component/list-bikes/list-bikes.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { BannerComponent } from './component/banner/banner.component';
     AddTaskComponent,
     LoginComponent,
     RegisterBikeComponent,
-    BannerComponent
+    BannerComponent,
+    ListBikesComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,7 @@ import { BannerComponent } from './component/banner/banner.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [TaskService, LoginService],
+  providers: [TaskService, LoginService, BikesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
