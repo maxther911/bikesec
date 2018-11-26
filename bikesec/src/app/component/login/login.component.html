@@ -1,7 +1,9 @@
 <li *ngIf="afAuth.user | async as user; else showLogin">
   <ul>
     <li><a routerLink="/bike-register">Registrar</a></li>
-    <li><a href="#" (click)="loginWithFacebook()">Consultar</a></li>
+    <li><a href="#" >Consultar</a></li>
+    <li><a  routerLink="/robbery-register" >Reg. Hurto</a></li>
+    
     
     <li>
       <div class="user-view">

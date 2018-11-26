@@ -13,6 +13,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { TaskService } from './service/task.service'
 import { LoginService } from './service/login.service'
 import { BikesService } from './service/bikes.service'
+import { AgmCoreModule } from '@agm/core';
 
 
 import { FormsModule } from '@angular/forms';
@@ -21,6 +22,7 @@ import { RegisterBikeComponent } from './component/register-bike/register-bike.c
 import { AppRoutingModule } from './app-routing.module';
 import { BannerComponent } from './component/banner/banner.component';
 import { ListBikesComponent } from './component/list-bikes/list-bikes.component';
+import { AddRobberyComponent } from './component/add-robbery/add-robbery.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ListBikesComponent } from './component/list-bikes/list-bikes.component'
     LoginComponent,
     RegisterBikeComponent,
     BannerComponent,
-    ListBikesComponent
+    ListBikesComponent,
+    AddRobberyComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,10 @@ import { ListBikesComponent } from './component/list-bikes/list-bikes.component'
     AngularFirestoreModule,
     AngularFireAuthModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAlNZXT-l5SGSjHvxImYoK4jx_FoiGTczY'
+    })
   ],
   providers: [TaskService, LoginService, BikesService],
   bootstrap: [AppComponent]

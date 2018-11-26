@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Bike } from '../../models/bike';
-import { Task } from '../../models/task';
 import { BikesService } from 'src/app/service/bikes.service';
 encapsulation: ViewEncapsulation.None
 declare var $: any;
