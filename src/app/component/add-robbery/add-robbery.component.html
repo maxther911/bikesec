@@ -1,0 +1,39 @@
+<div class="container">
+<div class="row">
+  <form action="addRobbery()">
+  <div class="col s12 l12 m12">
+    <label>Seleccione lugar del hurto</label>
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
+  </div>
+  <div class="col s12 l12 m12">
+    <label>Consultar por usuario</label>
+    <div class="row">
+        <div class="col s12 l12 m12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">search</i>
+              <input type="text" id="autocomplete-input" class="autocomplete">
+              <label for="autocomplete-input">Consultar usuario</label>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="col s12 l12 m12">
+    <label>Datos de la bici</label>
+    <input type="text" name="modelo" placeholder="Ingrese serial" [(ngModel)]="bike.serial" />
+    <input type="text" name="modelo" placeholder="Ingrese marca" [(ngModel)]="bike.marca" />
+    <input type="text" name="modelo" placeholder="Ingrese color" [(ngModel)]="bike.color" />
+    <textarea name="descripcion" [(ngModel)]="bike.descripcion"  placeholder="Ingrese la descripcion de la bici"></textarea>
+  </div>
+  <div class="col s12 l12 m12">
+    <div id="map"></div>
+  </div>
+  <div class="col s12 l12 m12"></div>
+  <div class="col s12 l12 m12"></div>
+  <div class="col s12 l12 m12"></div>
+</form>
+</div>
+</div>
