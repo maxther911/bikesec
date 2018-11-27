@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import { Bike } from 'src/app/models/bike';
-import { google } from '@agm/core/services/google-maps-types';
 declare var $: any;
 
 @Component({
@@ -27,7 +26,6 @@ export class AddRobberyComponent implements OnInit {
     description: ''
   };
 
-  @ViewChild("mapRef") mapRef: ElementRef;
   constructor() {
 
   }
@@ -35,21 +33,9 @@ export class AddRobberyComponent implements OnInit {
   ngOnInit() {
   }
 
-  showMap() {
-    console.log(this.mapRef.nativeElement);
-    const location = { lat: 28.5355, lng: 77.3910 };
-    var options = {
-      center: location,
-      zoom: 8
-    }
-
-    const map = new google.maps.Map(this.mapRef.nativeElement, options);
-    this.addMarket(map, location);
-  }
-  addMarket(pos, map) {
-    return new google.maps.Marker({
-      position: pos,
-      map: map,
-    });
+  getCoords(event) {
+    this.lat = event.coords.lat;
+    this.lng = event.coords.lng;
+    console.log(event);
   }
 }

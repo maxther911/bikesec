@@ -1,5 +1,7 @@
 export interface Bike {
     id?: string;
+    uid?: string;
+    nickName? : string;
     marca?: string;
     modelo?: string;
     serial?: string;

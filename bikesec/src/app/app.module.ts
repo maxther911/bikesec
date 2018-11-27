@@ -23,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BannerComponent } from './component/banner/banner.component';
 import { ListBikesComponent } from './component/list-bikes/list-bikes.component';
 import { AddRobberyComponent } from './component/add-robbery/add-robbery.component';
+import { MessageComponent } from './component/message/message.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AddRobberyComponent } from './component/add-robbery/add-robbery.compone
     RegisterBikeComponent,
     BannerComponent,
     ListBikesComponent,
-    AddRobberyComponent
+    AddRobberyComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

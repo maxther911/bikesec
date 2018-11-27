@@ -3,7 +3,7 @@
   <form action="addRobbery()">
   <div class="col s12 l12 m12">
     <label>Seleccione lugar del hurto</label>
-      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="getCoords($event)">
           <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
         </agm-map>
   </div>

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
 import { LoginService } from '../../service/login.service';
-declare var jquery:any;
+import { Observable } from 'rxjs';
 declare var $ :any;
 
 @Component({
@@ -11,27 +9,38 @@ declare var $ :any;
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
-  constructor(public afAuth: AngularFireAuth) { }
+  private user: Observable<firebase.User>;
+
+  constructor(private login : LoginService) { }
 
   ngOnInit() {
+    console.log("Llamando Clase");
+    if(this.login.isLoggedIn){
+      $(".title").slideToggle();
+      $("#loginOptions").slideToggle();
+    }
   }
 
   loginWithGoogle() {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-    console.log(this.afAuth.user);
+    this.login.signInWithGoogle();
+    this.user = this.login.getUser;
+    console.log(this.user);
   }
 
   loginWithFacebook(){
-    this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider());
+    this.login.signInWithFacebook();
+    this.user = this.login.getUser;
+    console.log(this.user);
   }
 
   loginWithEmail(){
-    this.afAuth.auth.signInWithPopup(new auth.EmailAuthProvider());
+    this.login.signInWithEmail();
+    this.user = this.login.getUser;
+    console.log(this.user);
   }
 
-  logout() {
-    this.afAuth.auth.signOut();
+  logout() { 
+    this.login.logout();
   }
 
   showLoginOptions(){
