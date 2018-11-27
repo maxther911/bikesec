@@ -57,7 +57,7 @@ export class ListBikesComponent implements OnInit {
   getBike() {
     this.bikeService.getBikesByUID().subscribe(
       bikes => {
-        this.bikesUsers = bikes;
+        this.bikes = bikes;
       });
   }
 }
