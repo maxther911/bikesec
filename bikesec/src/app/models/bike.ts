@@ -13,5 +13,6 @@ export interface Bike {
     image?: string;
     registerDate?: Date;
     incidentDate?: Date;
+    state? : string; 
   }
   

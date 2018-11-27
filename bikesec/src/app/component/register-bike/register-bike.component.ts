@@ -48,7 +48,7 @@ export class RegisterBikeComponent implements OnInit {
     console.log(console.info, this.login.getUserDetails.uid);
 
     if (this.bike.marca != '' && this.bike.description != '') {
-      this.bike.nickName = this.login.getUserDetails.email.split('@')[1];
+      this.bike.nickName = this.login.getUserDetails.email.split('@')[0];
       console.log('Usuario: ' + this.bike.nickName);
       this.bike.uid = this.login.getUserDetails.uid;
       console.log(this.bike.registerDate);

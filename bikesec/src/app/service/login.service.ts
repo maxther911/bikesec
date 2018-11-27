@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
 @Injectable()
 export class LoginService {
   private user: Observable<firebase.User>;
-  
+
   private userDetails: firebase.User = null;
-  
+
 
   constructor(private _firebaseAuth: AngularFireAuth, private router: Router) {
     this.user = _firebaseAuth.authState;
@@ -20,7 +20,6 @@ export class LoginService {
       (user) => {
         if (user) {
           this.userDetails = user;
-          console.log(this.userDetails);
         }
         else {
           this.userDetails = null;
@@ -47,11 +46,11 @@ export class LoginService {
     )
   }
 
-  signInWithEmail(){
+  signInWithEmail() {
     return this._firebaseAuth.auth.signInWithPopup(
-    new firebase.auth.GoogleAuthProvider()
-  )
-}
+      new firebase.auth.GoogleAuthProvider()
+    )
+  }
 
   isLoggedIn() {
     if (this.userDetails == null) {
@@ -73,8 +72,4 @@ export class LoginService {
   public get getUserDetails(): firebase.User {
     return this.userDetails;
   }
-  
-  
-  
-  
 }

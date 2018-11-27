@@ -1,4 +1,5 @@
-<div class="row" *ngIf="bikes?.length > 0;else noBikes">
+<div class="row container" *ngIf="bikes?.length > 0;else noBikes">
+  <h3 style="text-align: center">{{ Title }}</h3>
   <div *ngFor="let bike of bikes" class="collection card col l6 s12 m6">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator" src="{{bike.image}}">

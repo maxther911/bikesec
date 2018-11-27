@@ -14,10 +14,8 @@ export class LoginComponent implements OnInit {
   constructor(private login : LoginService) { }
 
   ngOnInit() {
-    console.log("Llamando Clase");
     if(this.login.isLoggedIn){
-      $(".title").slideToggle();
-      $("#loginOptions").slideToggle();
+      this.user = this.login.getUser;
     }
   }
 
