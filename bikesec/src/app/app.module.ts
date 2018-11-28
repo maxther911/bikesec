@@ -5,10 +5,10 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment'
 import { TasksComponent } from './component/task/task.component';
 import { AddTaskComponent } from './component/add-tasks/add-tasks.component';
-import { AngularFireModule } from 'angularfire2'
-import { AngularFirestoreModule } from 'angularfire2/firestore'
+import { AngularFireModule } from '@angular/fire'
+import { AngularFirestoreModule } from '@angular/fire/firestore'
 
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { TaskService } from './service/task.service'
 import { LoginService } from './service/login.service'
@@ -46,7 +46,7 @@ import { MessageComponent } from './component/message/message.component';
     FormsModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAlNZXT-l5SGSjHvxImYoK4jx_FoiGTczY'
+      apiKey: 'AIzaSyAKzuvYA5n2fzARWWlWVeE3VW27tBaMoZw'
     })
   ],
   providers: [TaskService, LoginService, BikesService],

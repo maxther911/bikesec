@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firebase : {
+  firebase: {
     apiKey: "AIzaSyDlhSv5h5eie0HVDXho6C7oBkmr-eCezcE",
     authDomain: "bikesec-a1b13.firebaseapp.com",
     databaseURL: "https://bikesec-a1b13.firebaseio.com",

@@ -9,9 +9,9 @@ declare var $: any;
   encapsulation: ViewEncapsulation.None
 })
 export class AddRobberyComponent implements OnInit {
-  private lat: number = 4.643548;
-  private lng: number = -74.1621109;
-  private zoom: number = 20;
+  lat: number = 4.643548;
+  lng: number = -74.1621109;
+  zoom: number = 16;
   private map: any;
 
   bike: Bike = {

@@ -9,7 +9,7 @@ declare var $ :any;
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private user: Observable<firebase.User>;
+  user: Observable<firebase.User>;
 
   constructor(private login : LoginService) { }
 
